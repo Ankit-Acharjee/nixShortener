@@ -1,7 +1,7 @@
 import UrlRedirect from "@/components/UrlRedirect";
 import fetchUrlById from "@/services/url.service";
 
-const page = async ({ params }) => {
+const Url = async ({ params }) => {
   console.log(params);
   const { id } = params;
   console.log(id);
