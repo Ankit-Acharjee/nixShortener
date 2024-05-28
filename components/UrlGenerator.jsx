@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
-import { getShortenedUrl } from "@/actions/url.action";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -16,7 +15,6 @@ const UrlGenerator = ({ userId }) => {
     e.preventDefault();
 
     try {
-      const shortenedUrl = await getShortenedUrl();
       const response = await fetch("/api/url", {
         method: "POST",
         headers: {
@@ -25,7 +23,6 @@ const UrlGenerator = ({ userId }) => {
         body: JSON.stringify({
           userId,
           originalUrl: url,
-          shortenedUrl,
         }),
       });
 

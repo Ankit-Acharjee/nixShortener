@@ -1,3 +1,4 @@
+import { getShortenedUrl } from "@/actions/url.action";
 import connectMongoDB from "@/db/mongoDb";
 import Url from "@/models/url.model";
 import User from "@/models/user.model";
@@ -5,8 +6,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    const { userId, originalUrl, shortenedUrl } = await req.json();
+    const { userId, originalUrl } = await req.json();
     await connectMongoDB();
+    const shortenedUrl = await getShortenedUrl();
     const urlData = await Url.create({
       userId,
       originalUrl,
