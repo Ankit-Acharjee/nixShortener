@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Sidebar } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +10,11 @@ export const metadata = {
 
 export default function HomeLayout({ children }) {
   return (
-    <main className="relative">
+    <main className="max-w-6xl mx-auto p-4">
         <Navbar />
         <div className="flex">
-          <section className="max-w-3xl mx-auto p-4 m-12">
-            <div className="w-full">{children}</div>
+          <section className="w-full">
+            <div className="mt-8">{children}</div>
           </section>
         </div>
       </main>

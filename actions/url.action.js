@@ -8,7 +8,7 @@ export async function getShortenedUrl() {
 
   do {
     uuid = generateUUID().substring(0,8);
-    urlCheck = await User.findOne({ shortenedUrl: uuid }); // Replace 'uuid' with your actual field name
+    urlCheck = await User.findOne({ shortenedUrl: uuid });
   } while (urlCheck);
 
   const url = uuid.toString();

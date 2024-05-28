@@ -13,7 +13,7 @@ const Copy = ({ url }) => {
       console.error("Failed to copy text: ", err);
     }
   };
-  console.log(url)
+  // console.log(url)
   return (
     <div>
       {!isCopied ? (
